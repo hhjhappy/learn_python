@@ -11,7 +11,7 @@ input("?")
 print("Opening the file...")
 
 #以写权限打开文件
-target = open(filename,'a')
+target = open(filename,'w+')
 print("Truncating the file. Goodbye!")
 
 #seek()方法用于移动文件读取指针到指定位置。
@@ -51,14 +51,14 @@ target.write('\n')
 print("And finally,we close it.")
 target.close()
 
-with open(filename,'r') as txt:
-    txt.seek(,2)
-    while True:
-        line = txt.readline()
-        if line:
-            print(line.strip())
-        else:
-            break
+# with open(filename,'r') as txt:
+#     txt.seek(2)
+#     while True:
+#         line = txt.readline()
+#         if line:
+#             print(line.strip())
+#         else:
+#             break
     
 
 # with open(filename,'w') as target:
