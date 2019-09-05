@@ -69,7 +69,7 @@
 
 from sys import argv
 
-script,filename = argv
+# script,filename = argv
 
 # file = open(filename,'r')
 # while True:
@@ -79,15 +79,15 @@ script,filename = argv
 #     else:
 #         break
 # file.close()
-with open(filename,'r') as f:
-    while True:
-        txt_line = f.readline()
-        if txt_line:
-            print(txt_line.strip('\n'))
-            # if '那到底是一个什么地方' in txt_line:
-                # print(txt_line.strip('\n'))
-        else:
-            break
+# with open(filename,'r') as f:
+#     while True:
+#         txt_line = f.readline()
+#         if txt_line:
+#             print(txt_line.strip('\n'))
+#             # if '那到底是一个什么地方' in txt_line:
+#                 # print(txt_line.strip('\n'))
+#         else:
+#             break
 
 # with open(filename,'r') as txt:
 #     # print("Here's your file %r:" %filename)
@@ -110,7 +110,11 @@ with open(filename,'r') as f:
 
 
 
-
+with open('dmbj.txt','r')as f:
+    l = list(f)
+    for line in l:
+        print(type(line))
+        print(line)
 
 
 
