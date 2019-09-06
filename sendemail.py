@@ -3,43 +3,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 from email.mime.application import MIMEApplication
 import smtplib
-# i = None
-# number = []
-
-# while i < 6:
-#     print('Are you ok?')
-#     number.append(i)
-#     i += 1
-#     print(number)
-
-# while True:
-#     i += 1
-#     print(i)
-#     if i == 10:
-#         break
-
-# try:
-#     # i += 1
-#     if i is None :
-#         raise NameError
-#         print(i)
-# except TypeError:
-#     print("ffff")
 
 
-# def is_odd(n):
-#     return n % 2 == 1
-
-# fff = lambda n: n % 2 == 1
-
-# print(fff(3))
-
-# print(is_odd(3))
-
-# def add_unit(num):
-#     return 
-
-
+#发件人
 from_add = 'hejian@weather.com.cn'
 #发送人密码
 from_passwd = '123.coM'
@@ -49,22 +15,28 @@ from_passwd = '123.coM'
 to_add = ['hejian@weather.com.cn']
 smtp_server = 'smtp.exmail.qq.com'
 
-def send_email():
+def send_email(fj=None):
     m = MIMEMultipart()
     content = 'hello baidu.weather.com.cn'
     contentApart = MIMEText(content, _charset='utf-8')
 
-    # for i in fj:
-    #     zipApart = MIMEApplication(open(i, 'rb').read())
-    #     zipApart.add_header('Content-Disposition', 'attachment', filename=i)
-    #     m.attach(zipApart)
-    #     m.attach(contentApart)
+    #发送附件
+    if fj is not None:
+        for i in fj:
+            zipApart = MIMEApplication(open(i, 'rb').read())
+            zipApart.add_header('Content-Disposition', 'attachment', filename=i)
+            m.attach(zipApart)
+            m.attach(contentApart)
 
+    #邮件主题
     m['Subject'] = 'subject'
+    #发件人
     m["From"] = 'hejian@weather.com.cn'
+    #收件人
     m['To'] = ','.join(to_add)
+    #邮件内容
     m.attach(contentApart)
-    print(m)
+    # 抄送
     # m['Cc'] = ",".join(Cs)
 
     try:
