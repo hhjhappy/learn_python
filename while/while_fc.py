@@ -40,39 +40,87 @@ import smtplib
 #     return 
 
 
-from_add = 'hejian@weather.com.cn'
-#发送人密码
-from_passwd = '123.coM'
-#抄送人列表
-# Cs = ['hejian@weather.com.cn','wuy@weather.com.cn','gaos@weather.com.cn','wuj@weather.com.cn']
-#发送人列表
-to_add = ['hejian@weather.com.cn']
-smtp_server = 'smtp.exmail.qq.com'
+# from_add = 'hejian@weather.com.cn'
+# #发送人密码
+# from_passwd = '123.coM'
+# #抄送人列表
+# # Cs = ['hejian@weather.com.cn','wuy@weather.com.cn','gaos@weather.com.cn','wuj@weather.com.cn']
+# #发送人列表
+# to_add = ['hejian@weather.com.cn']
+# smtp_server = 'smtp.exmail.qq.com'
 
-def send_email():
-    m = MIMEMultipart()
-    content = 'hello baidu.weather.com.cn'
-    contentApart = MIMEText(content, _charset='utf-8')
+# def send_email():
+#     m = MIMEMultipart()
+#     content = 'hello baidu.weather.com.cn'
+#     contentApart = MIMEText(content, _charset='utf-8')
 
-    # for i in fj:
-    #     zipApart = MIMEApplication(open(i, 'rb').read())
-    #     zipApart.add_header('Content-Disposition', 'attachment', filename=i)
-    #     m.attach(zipApart)
-    #     m.attach(contentApart)
+#     # for i in fj:
+#     #     zipApart = MIMEApplication(open(i, 'rb').read())
+#     #     zipApart.add_header('Content-Disposition', 'attachment', filename=i)
+#     #     m.attach(zipApart)
+#     #     m.attach(contentApart)
 
-    m['Subject'] = 'subject'
-    m["From"] = 'hejian@weather.com.cn'
-    m['To'] = ','.join(to_add)
-    m.attach(contentApart)
-    print(m)
-    # m['Cc'] = ",".join(Cs)
+#     m['Subject'] = 'subject'
+#     m["From"] = 'hejian@weather.com.cn'
+#     m['To'] = ','.join(to_add)
+#     m.attach(contentApart)
+#     print(m)
+#     # m['Cc'] = ",".join(Cs)
 
-    try:
-        server = smtplib.SMTP(smtp_server)
-        server.login(from_add, from_passwd)
-        server.sendmail(from_add,to_add,m.as_string())
-        server.quit()
-    except smtplib.SMTPException as error:
-        print('Send error', error)
+#     try:
+#         server = smtplib.SMTP(smtp_server)
+#         server.login(from_add, from_passwd)
+#         server.sendmail(from_add,to_add,m.as_string())
+#         server.quit()
+#     except smtplib.SMTPException as error:
+#         print('Send error', error)
 
-send_email()
+# send_email()
+
+# list = 'abcdef'
+# things = []
+# for i in list:
+#     things.append(i)
+# print(things[:-1])
+
+states = {
+    'Oregon':'OR',
+    'Flordia':'FL',
+    'California':'CA',
+    'New York':'NY',
+    'Michigan':'MI'
+}
+
+cities ={
+    'CA':'San Francisco',
+    'MI':'Detroit',
+    'FL':'Jacksonville'
+}
+
+cities['NY'] = 'New York'
+cities['OR'] = 'Portland'
+
+print('-' * 10)
+print("NY state has:",cities['NY'])
+print("OR state has:",cities['OR'])
+
+
+print('\n')
+print('-' * 10)
+print('\n'*10)
+for state,abbrev in states.items():
+    print('%s is abbreviated %s' %(state,abbrev))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
