@@ -1,12 +1,6 @@
 import json
 import pymysql
-
-
-# with open('domain_list.txt','r') as domain:
-#     for  i in domain.readlines():
-#
-#         print(eval(i).values())
-
+import configparser
 
 create_sql = '''
 CREATE TABLE  weathername (
@@ -21,23 +15,23 @@ enabled varchar(10)  NOT NULL
 '''
 insert_lan = '''insert into weathername(domain_id,domain_name,service_type,name,status,cdn_service_status,enabled) values '''
 
-
 def append_key():
     value = []
     with open('domain_list.txt', 'r') as domain:
         for i in domain.readlines():
-            value.append(eval(i).values())
-    print(value)
+            value.append(list(eval(i).values()))
+    try:
+        con = pymysql.connect(host='220.243.129.4', port=3306, db='domain_name', user='hhj',password='{av:3oY#~tkWKI(iLL)!', charset='utf8')
+        cur = con.cursor()
+        for k in value:
+            new_lang = []
+            new_lang.append((int(k[0]),str(k[1]),str(k[2]),str(k[3]),str(k[4]),str(k[5]),str(k[6])))
+            insert_sql = insert_lan + str(new_lang).strip('[').strip(']') + ';'
+            cur.execute(insert_sql)
+            con.commit()
+    except pymysql.Error as error:
+        print(error)
+    finally:
+        con.close()
+
 append_key()
-# print(value)
-
-
-# print(insert_sql)
-# try:
-#     con = pymysql.connect(host = '220.243.129.4',port = 3306, db = 'domain_name',user = 'hhj',password = '{av:3oY#~tkWKI(iLL)!',charset = 'utf8')
-#     cur = con.cursor()
-#     cur.execute(insert_sql)
-#     cur.close()
-# except pymysql.Error as error:
-#     print(error)
-

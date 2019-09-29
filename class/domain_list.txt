@@ -10,7 +10,6 @@
 {'domain-id': '3419290', 'domain-name': 'baoji.local.weather.com.cn', 'service-type': 'web', 'cname': 'baoji.local.weather.com.cn.wswebcdn.com', 'status': 'Deployed', 'cdn-service-status': 'true', 'enabled': 'true'}
 {'domain-id': '182782', 'domain-name': 'bdmap.weather.com.cn', 'service-type': 'web-https', 'cname': 'bdmap.weather.com.cn.cdn20.com', 'status': 'Deployed', 'cdn-service-status': 'true', 'enabled': 'true'}
 {'domain-id': '3419335', 'domain-name': 'binzhou.local.weather.com.cn', 'service-type': 'web', 'cname': 'binzhou.local.weather.com.cn.wswebcdn.com', 'status': 'Deployed', 'cdn-service-status': 'true', 'enabled': 'true'}
-{'domain-id': '3419332', 'domain-name': 'biz.weather.com.cn', 'service-type': 'web', 'cname': 'biz.weather.com.cn.wswebcdn.com', 'status': 'Deployed', 'cdn-service-status': 'true', 'enabled': 'true'}
 {'domain-id': '158653', 'domain-name': 'bj.weather.com.cn', 'service-type': 'web-https', 'cname': 'bj.weather.com.cn.cdn20.com', 'status': 'Deployed', 'cdn-service-status': 'true', 'enabled': 'true'}
 {'domain-id': '3321922', 'domain-name': 'c.i8tq.com', 'service-type': 'web-https', 'cname': 'c.i8tq.com.wswebcdn.com', 'status': 'Deployed', 'cdn-service-status': 'true', 'enabled': 'true'}
 {'domain-id': '3419345', 'domain-name': 'chuxing.weather.com.cn', 'service-type': 'web', 'cname': 'chuxing.weather.com.cn.wswebcdn.com', 'status': 'Deployed', 'cdn-service-status': 'true', 'enabled': 'true'}
